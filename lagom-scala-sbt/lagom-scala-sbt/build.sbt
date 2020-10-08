@@ -10,6 +10,24 @@ val scalaTest = "org.scalatest" %% "scalatest" % "3.1.1" % Test
 lazy val `greetingapi` = (project in file("."))
   .aggregate(`weatherapi-api`, `weatherapi-impl`)
 
+lazy val `greetingapi-api` = (project in file("greetingapi-api"))
+  .settings(
+    libraryDependencies ++= Seq(
+      lagomScaladslApi
+    )
+  )
+
+lazy val `greetingapi-impl` = (project in file("greetingapi-impl"))
+  .enablePlugins(LagomScala)
+  .settings(
+    libraryDependencies ++= Seq(
+      lagomScaladslTestKit,
+      macwire,
+      scalaTest
+    )
+  )
+  .dependsOn(`greetingapi-api`, `weatherapi-api`)
+
 lazy val `weatherapi-api` = (project in file("weatherapi-api"))
   .settings(
     libraryDependencies ++= Seq(

@@ -7,6 +7,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/greetingapi-api" />
+            <option value="$PROJECT_DIR$/greetingapi-impl" />
             <option value="$PROJECT_DIR$/project" />
             <option value="$PROJECT_DIR$/target/lagom-dynamic-projects/lagom-internal-meta-project-cassandra" />
             <option value="$PROJECT_DIR$/target/lagom-dynamic-projects/lagom-internal-meta-project-kafka" />
