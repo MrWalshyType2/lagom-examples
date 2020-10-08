@@ -1,6 +1,7 @@
 package com.example.inventory.impl;
 
 import com.example.inventory.api.ProductService;
+import com.example.inventory.user.api.UserService;
 import com.google.inject.AbstractModule;
 import com.lightbend.lagom.javadsl.server.ServiceGuiceSupport;
 
@@ -11,5 +12,8 @@ public class ProductServiceModule extends AbstractModule implements ServiceGuice
     protected void configure() {
         // bind the api to a service
         bindService(ProductService.class, ProductServiceImpl.class);
+
+        // bind a service client for programmatic microservice communication, make sure to have added dependency to build.sbt
+        bindClient(UserService.class);
     }
 }

@@ -19,10 +19,13 @@ public interface ProductService extends Service {
      */
     ServiceCall<NotUsed, String> test();
 
+    ServiceCall<NotUsed, String> testUserService();
+
     @Override
     default Descriptor descriptor() {
         return named("product-service").withCalls(
-                restCall(Method.GET, "/api/products/test", this::test) // exposed endpoint calls 'test()'
+                restCall(Method.GET, "/api/products/test", this::test), // exposed endpoint calls 'test()'
+                restCall(Method.GET, "/api/products/test-user-service", this::testUserService)
         ).withAutoAcl(true); // Provide AccessControl for the endpoints
     }
 }

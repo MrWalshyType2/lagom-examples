@@ -6,7 +6,7 @@ scalaVersion in ThisBuild := "2.13.0"
 
 // microservices - two parts, api & implementation
 lazy val `inventory` = (project in file("."))
-  .aggregate(`product-api`, `product-impl`)
+  .aggregate(`product-api`, `product-impl`, `user-api`, `user-impl`)
 
 // ...`api name` = (...(file name))
 lazy val `product-api` = (project in file("product-api"))
@@ -31,7 +31,31 @@ lazy val `product-impl` = (project in file("product-impl"))
     )
   )
   .settings(lagomForkedTestSettings)
-  .dependsOn(`product-api`)
+  .dependsOn(`product-api`, `user-api`) // connects microservices
+
+lazy val `user-api` = (project in file("user-api"))
+  .settings(common)
+  .settings(
+    libraryDependencies ++= Seq(
+      lagomJavadslApi,
+      lombok
+    )
+  )
+
+lazy val `user-impl` = (project in file("user-impl"))
+  .enablePlugins(LagomJava)
+  .settings(common)
+  .settings(
+    libraryDependencies ++= Seq(
+      //lagomJavadslPersistenceCassandra, // open-source nosql db
+      //lagomJavadslKafkaBroker, // stream-processing implementation
+      lagomLogback,
+      lagomJavadslTestKit, // for testing
+      lombok
+    )
+  )
+  .settings(lagomForkedTestSettings)
+  .dependsOn(`user-api`)
 
 val lombok = "org.projectlombok" % "lombok" % "1.18.8"
 

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="product-impl [file:/C:/Users/morga/Documents/QA/lagom/lagom-java-sbt/lagom-java-sbt/]" external.linked.project.path="$MODULE_DIR$/../../product-impl" external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
+<module external.linked.project.id="user-impl [file:/C:/Users/morga/Documents/QA/lagom/lagom-java-sbt/lagom-java-sbt/]" external.linked.project.path="$MODULE_DIR$/../../user-impl" external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/../../product-impl/target/scala-2.13/classes" />
-    <output-test url="file://$MODULE_DIR$/../../product-impl/target/scala-2.13/test-classes" />
+    <output url="file://$MODULE_DIR$/../../user-impl/target/scala-2.13/classes" />
+    <output-test url="file://$MODULE_DIR$/../../user-impl/target/scala-2.13/test-classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../product-impl">
-      <sourceFolder url="file://$MODULE_DIR$/../../product-impl/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../product-impl/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../product-impl/src/main/resources" type="java-resource" />
-      <excludeFolder url="file://$MODULE_DIR$/../../product-impl/target" />
+    <content url="file://$MODULE_DIR$/../../user-impl">
+      <sourceFolder url="file://$MODULE_DIR$/../../user-impl/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../user-impl/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../user-impl/src/main/resources" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../../user-impl/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -164,7 +164,6 @@
     <orderEntry type="library" name="sbt: org.slf4j:jul-to-slf4j:1.7.30:jar" level="project" />
     <orderEntry type="library" name="sbt: org.slf4j:log4j-over-slf4j:1.7.30:jar" level="project" />
     <orderEntry type="library" name="sbt: org.slf4j:slf4j-api:1.7.30:jar" level="project" />
-    <orderEntry type="module" module-name="product-api" exported="" />
     <orderEntry type="module" module-name="user-api" exported="" />
   </component>
 </module>
