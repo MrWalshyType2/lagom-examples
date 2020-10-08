@@ -2,7 +2,7 @@ package org.example.greetingapi.impl
 import akka.NotUsed
 import com.lightbend.lagom.scaladsl.api.ServiceCall
 import javax.inject.Inject
-import org.example.weatherapi.api.{WeatherResponse, WeatherapiService}
+import org.example.weatherapi.api.{WeatherResponse, WeatherapiService, WeatherRequest => WeatherApiRequest}
 
 import scala.concurrent.{ExecutionContext, Future}
 
@@ -17,9 +17,8 @@ class GreetingServiceImpl(weatherapiService: WeatherapiService)(implicit ec: Exe
 
   override def requestGreetingWithWeather(name: String): ServiceCall[WeatherRequest, String] = ServiceCall {
     weatherRequest =>
-      val result: Future[WeatherResponse] = weatherapiService.requestWeather.invoke(
-        org.example.weatherapi.api.WeatherRequest(weatherRequest.location)
-      )
+      val result: Future[WeatherResponse] =
+        weatherapiService.requestWeather.invoke(WeatherApiRequest(weatherRequest.location))
 
       result.map { weatherResponse =>
         s"Hello $name, the weather in ${weatherRequest.location} is ${weatherResponse.condition} today."
