@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="greetingapi,greetingapi-api,greetingapi-impl,greetingapi-stream-api,greetingapi-stream-impl,lagom-internal-meta-project-cassandra,lagom-internal-meta-project-kafka,lagom-internal-meta-project-service-locator,lagom-scala-sbt_5111,weatherapi-api,weatherapi-impl" />
+    <profile name="sbt 1" modules="greetingapi-stream-api,greetingapi-stream-impl,lagom-scala-sbt_5111" />
+    <profile name="sbt 2" modules="lagom-play-gateway">
+      <option name="deprecationWarnings" value="true" />
+      <option name="uncheckedWarnings" value="true" />
+      <parameters>
+        <parameter value="-encoding" />
+        <parameter value="utf8" />
+      </parameters>
+      <plugins>
+        <plugin path="C:\Users\morga\.ivy2\cache\com.github.ghik\silencer-plugin_2.13.0\jars\silencer-plugin_2.13.0-1.6.0.jar" />
+      </plugins>
+    </profile>
+    <profile name="sbt 3" modules="greetingapi,greetingapi-api,greetingapi-impl,weatherapi-api,weatherapi-impl">
+      <plugins>
+        <plugin path="C:\Users\morga\.ivy2\cache\com.github.ghik\silencer-plugin_2.13.0\jars\silencer-plugin_2.13.0-1.6.0.jar" />
+      </plugins>
+    </profile>
+    <profile name="sbt 4" modules="lagom-internal-meta-project-cassandra,lagom-internal-meta-project-kafka,lagom-internal-meta-project-service-locator">
+      <plugins>
+        <plugin path="C:\Users\morga\.ivy2\cache\com.github.ghik\silencer-plugin_2.12.10\jars\silencer-plugin_2.12.10-1.6.0.jar" />
+      </plugins>
+    </profile>
   </component>
 </project>
