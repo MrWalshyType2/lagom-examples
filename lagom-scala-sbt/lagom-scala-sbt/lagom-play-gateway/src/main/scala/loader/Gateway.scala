@@ -8,6 +8,7 @@ import com.lightbend.lagom.scaladsl.server.AkkaManagementComponents
 import com.softwaremill.macwire.wire
 import controllers.{AssetsComponents, AssetsFinder}
 import org.example.greetingapi.impl.GreetingapiService
+import org.example.weatherapi.api.WeatherapiService
 import org.webjars.play.{RequireJS, WebJarAssets, WebJarsUtil}
 import play.api.ApplicationLoader.Context
 import play.api.inject.ApplicationLifecycle
@@ -47,6 +48,7 @@ abstract class Gateway(context: Context, override val httpFilters: Seq[Essential
   implicit override val assetsFinder: AssetsFinder = assetsMetadata.finder
 
   lazy val greetingService: GreetingapiService = serviceClient.implement[GreetingapiService]
+  lazy val weatherService: WeatherapiService = serviceClient.implement[WeatherapiService]
 
   lazy val `lagom-play-gateway`: HomeController = wire[HomeController]
 
